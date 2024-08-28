@@ -64,9 +64,9 @@ Siden $NN$ er universet og $B$ er definert utifra det må $B subset.eq A union D
 
 == Oppgave 1e
 
-Vis følgende påstand $macron(D) subset.eq A$
+Vis følgende påstand $overline(D) subset.eq A$
 
-Siden $A = NN backslash {0}$ trenger vi bare sjekke om $0 in macron(D)$ siden dette er det eneste punktet som kan gjøre at $macron(D) subset.eq.not A$. Siden $0 in D$ er $0 in.not macron(D)$ og dermed må $macron(D) subset.eq A$ stemme
+Siden $A = NN backslash {0}$ trenger vi bare sjekke om $0 in overline(D)$ siden dette er det eneste punktet som kan gjøre at $overline(D) subset.eq.not A$. Siden $0 in D$ er $0 in.not overline(D)$ og dermed må $overline(D) subset.eq A$ stemme
 
 == Oppgave 1f
 
@@ -81,10 +81,15 @@ påstander.
 
 == Oppgave 2a
 
-$ P(A sect B) subset.eq P(B) \
-{S bar.v S subset.eq A sect B} subset.eq {S bar.v S subset.eq B} $
+$ P(A sect B) subset.eq P(B) $
 
-Påstanden stemmer siden S må være en delmengde av B på begge sider
+La $X in P(A sect B)$ og $x in X$. Da følger:
+
+$ X in P(A sect B) => X subset.eq A sect B => x in A and x in B $
+
+Siden alle $x in B => X subset.eq B$. Og siden $P(B)$ inneholder alle delmengder av $B$ betyr det at $X in P(B)$
+
+Påstanden stemmer.
 
 == Oppgave 2b
 
@@ -96,9 +101,11 @@ Vi ser at påstanden ikke stemmer.
 
 == Oppgave 2c
 
-$ A sect B in P(A union B) \
-P(A union B) = {S bar.v S subset.eq A union B} \
-A sect B subset.eq A union B => A sect B in P(A union B) $
+$ A sect B &in P(A union B) \
+P(A union B) &= {S bar.v S subset.eq A union B} \
+A sect B subset.eq A union B &=> A sect B in P(A union B) $
+
+Vi sjekker om $A sect B$ er en gyldig verdi for $S$, og siden den er det, er påstanden sann
 
 Påstanden stemmer
 
@@ -107,11 +114,18 @@ Påstanden stemmer
 $ P(A) union P(B) = P(A union B) \
 {S_1 | S_1 subset.eq A} union {S_2 | S_2 subset.eq B} = {S_3 | S_3 subset.eq A union B} $
 
-Siden $S_1$ eller $S_2$ ikke nødvendigvis er nøyaktig lik $S_3$, for eksempel $A = {1}$, $B = {2}$ mangler unionen mellom $S_1$ og $S_2$ sin potensmengde verdien ${1, 2}$. Altså stemmer ikke påstanden
+Siden $S_1$ eller $S_2$ ikke nødvendigvis er nøyaktig lik $S_3$, for eksempel $A = {1}$, $B = {2}$ mangler unionen mellom $S_1$ og $S_2$ potensmengdeverdien ${1, 2}$. Altså stemmer ikke påstanden
 
 == Oppgave 2e
 
-$ P(A backslash B) subset.eq P(macron(A)) sect P(B) \
-{S_1 | S_1 subset.eq A backslash B} subset.eq {S | S in P(A) and S in P(B)} \
- subset.eq
-$
+$ P(A backslash B) subset.eq P(overline(A)) sect P(B) $
+
+La $X in P(A backslash B)$ og $x in X$. Da følger:
+
+$ X in P(A backslash B) => x in A and x in.not B $
+
+La nå $Y in P(overline(A)) sect P(B)$ og $y in Y$. Da følger:
+
+$ Y in P(overline(A)) sect P(B) => y in overline(A) and y in B => y in.not A and y in B$
+
+Vi observerer at $x$ og $y$ har stikk motsatte egenskaper. Siden $X != Y$ utenom det trivielle tilfellet $X = Y = emptyset$, vil potensmengdene ikke ha noe overlapp i det hele tatt (utenom $emptyset$). Påstanden blir derfor usann.
